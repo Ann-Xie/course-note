@@ -1,7 +1,7 @@
 
 clear
 
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\randomwalk.csv"
+insheet using "F:\Econometrics\randomwalk.csv"
 
 tsset time
 
@@ -26,7 +26,7 @@ pac d.y1, blwidth(vthick) yscale(range(-1 1))
 ****************************************
 * 1. random walk without drift 
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\randomwalk.csv"
+insheet using "F:\Econometrics\randomwalk.csv"
 
 tsset time
 
@@ -40,7 +40,7 @@ twoway(line y2 time)
 * yt = yt-1 + e1
 * xt = xt-1 + e2
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\whitenoise.csv"
+insheet using "F:\Econometrics\whitenoise.csv"
 
 gen time = _n
 
@@ -55,7 +55,7 @@ twoway(line e2 time)
 * xt = L.xt + e2
 ************************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\whitenoise.csv"
+insheet using "F:\Econometrics\whitenoise.csv"
 
 gen time = _n
 tsset time
@@ -86,7 +86,7 @@ ac yt, blwidth(vthick) yscale(range(-1 1))
 
 * US/UK exchange rate data
 clear
-infile time exchange using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\exchange.txt"
+infile time exchange using "F:\Econometrics\exchange.txt"
 
 tsset time
 gen lny = ln(exchange)
@@ -120,7 +120,7 @@ dfuller dlny, lags(4) trend reg
 
 * simulated data
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\whitenoise.csv"
+insheet using "F:\Econometrics_\whitenoise.csv"
 
 gen time=_n
 
@@ -157,7 +157,7 @@ dfuller yt, lags(4) trend reg
  * identifying AR model 
 
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\whitenoise.csv"
+insheet using "F:\Econometrics\whitenoise.csv"
 
 gen time=_n
 tsset time
@@ -206,7 +206,7 @@ twoway (line et3 time, clcolor(blue) clwidth(thick))
 
 * sunspots data (from http://www.stanford.edu/~clint/bench/#ar1)
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\sunspot.csv"
+insheet using "F:\Econometrics\sunspot.csv"
 gen time = _n
 
 tsset time
@@ -287,7 +287,7 @@ pac wt7, blwidth(vthick) yscale(range(-1 1))
 * ARIMA(1,0,1)
 *************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\bjaarma11.csv"
+insheet using "F:\Econometrics\bjaarma11.csv"
 
 gen time=_n
 
@@ -326,7 +326,7 @@ arima a, arima(4,0,4)
 ******************
 * Monthly simple returns of 3M stock 
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\3M_return.csv"
+insheet using "F:\Econometrics\3M_return.csv"
 
 tsset time
 
@@ -349,7 +349,7 @@ Macroeconomic Data, United States, 1970.1 to 1991.4
   DIVIDEND = Net Corporate Dividends Payments, Billions of 1987 $
 ******************************************************************8
 clear
-infile  year  gdp  pdi   pce  profits  dividend using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\USGDPstata.txt"
+infile  year  gdp  pdi   pce  profits  dividend using "F:\Econometrics\USGDPstata.txt"
 gen time=_n
 tsset time
 
@@ -460,7 +460,7 @@ pac e2, blwidth(vthick)  yscale(range(-1 1))
 * cointegration and ECM models
 *************************************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\foodvsfuel_data.csv"
+insheet using "F:\Econometrics_\foodvsfuel_data.csv"
 
 gen T = _n
 tsset T
@@ -531,7 +531,7 @@ reg lnpo lnpg
 * ARCH and GARCH models
 *********************************
 clear
-infile time exchange using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\exchange.txt"
+infile time exchange using "F:\Econometrics\exchange.txt"
 
 tsset time
 gen lny = ln(exchange)
@@ -573,7 +573,7 @@ arch lny, arch(1/1) garch(1/1) arima(0,1,1)
 
 * intel return
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter7_data\intel_return.csv"
+insheet using "F:\Econometrics\intel_return.csv"
 tsset time
 
 twoway (line r time, clwidth(medthick))
