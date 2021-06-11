@@ -3,7 +3,7 @@
 home ownership data
 ********************************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\homeowner.csv", clear
+insheet using "F:\Econometrics\homeowner.csv", clear
 
 * LPM estimation
 reg y x
@@ -22,7 +22,7 @@ scatter y x
  GPA data
 **********************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\GPA.csv"
+insheet using "F:\Econometrics\GPA.csv"
 
 * logit model
 
@@ -59,7 +59,7 @@ dprobit y gpa tuce psi
 * credit example
 ******************
 clear
-infile ID str13 SEX str13 MAJOR  AGE GPT HRS str13 RISK using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\credit.txt"
+infile ID str13 SEX str13 MAJOR  AGE GPT HRS str13 RISK using "F:\Econometrics\credit.txt"
 
 describe
 
@@ -125,7 +125,7 @@ tabulate RISK Predicted_Risk2, row
 
 * compare logit with probit
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\probitplot.csv"
+insheet using "F:\Econometrics\probitplot.csv"
 
 twoway (line logit z, clcolor("0 0 0") clpat(solid) clwidth(medthick)) (line probit z, clcolor("255 0 0")clpat(dash) clwidth(medthick))
  
@@ -157,7 +157,7 @@ labor union
 (15) F_EDC =  Years of education for females only.
 
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\union.csv" 
+insheet using "F:\Econometrics\union.csv" 
 
 * logit specification
 * unrestricted model
@@ -211,7 +211,7 @@ table yhat2 union, contents(freq)
 
 clear
 
-global root F:\Econometrics_undergraduate\class_dataset\Chapter6_data
+global root F:\Econometrics\Chapter6_data
 use $root\cps1re74.dta
 
 sum age ed black hisp married nodeg re74 re75 re78 if treat==1
@@ -275,7 +275,7 @@ Crime1.DES
  15. pt86sq                   ptime86^2
  16. inc86sq                  inc86^2
 
-infile narr86 nfarr86 nparr86 pcnv avgsen tottime ptime86 qemp86 inc86 durat black hispan  born60  pcnvsq pt86sq inc86sq using "F:\Econometrics_undergraduate\class_dataset\Chapter6_data\CRIME1.RAW", clear 
+infile narr86 nfarr86 nparr86 pcnv avgsen tottime ptime86 qemp86 inc86 durat black hispan  born60  pcnvsq pt86sq inc86sq using "F:\Econometrics\CRIME1.RAW", clear 
 
 sum
 table narr86
