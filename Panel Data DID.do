@@ -6,7 +6,7 @@
 clear
 set matsize 800
 
-infile nr year black exper hisp hours married occ1 occ2 occ3 occ4 occ5 occ6 occ7 occ8 occ9 educ union lwage d81 d82 d83 d84 d85 d86 d87 expersq using "F:\Econometrics_undergraduate\class_dataset\Chapter8_data\WAGEPAN.RAW", clear 
+infile nr year black exper hisp hours married occ1 occ2 occ3 occ4 occ5 occ6 occ7 occ8 occ9 educ union lwage d81 d82 d83 d84 d85 d86 d87 expersq using "F:\Econometrics\WAGEPAN.RAW", clear 
 
 * 11.0 version: xtset nr year
 tsset nr year
@@ -50,7 +50,7 @@ hausman . random_effects
 
 * Difference-in-Difference estimator
 
-insheet using F:\Econometrics_undergraduate\class_dataset\Chapter8_data\KIELMC.csv
+insheet using F:\Econometrics\KIELMC.csv
 
 sum
 
