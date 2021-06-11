@@ -1,5 +1,5 @@
 * wage data
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter3_data\WAGE1.RAW", clear
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW", clear
 
 reg wage educ exper
 
@@ -51,7 +51,7 @@ dis _b[educ]
 
 * US chicken demand vs. zhang's
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter3_data\chicken_data.csv"
+insheet using "F:\Econometrics\chicken_data.csv"
 
 gen lny = ln(y)
 gen lnx2 = ln(x2)
@@ -86,7 +86,7 @@ Hildebrand and Liu (1957).
 **********************************************
 
 clear
-infile obs y l k using "F:\Econometrics_undergraduate\class_dataset\Chapter3_data\Greene\table5.txt"
+infile obs y l k using "F:\Econometrics\table5.txt"
 
 gen lny = ln(y)
 gen lnL = ln(l)
