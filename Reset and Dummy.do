@@ -3,7 +3,7 @@
 * wage1 data -quadratic function form
 **************************************************
 
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\WAGE1.RAW", clear
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_\WAGE1.RAW", clear
 
 reg wage exper expersq
 
@@ -37,7 +37,7 @@ gen dwage_dexper2 = _b[exper] + 2*_b[expersq]*exper
 ****************************************************************
 
 clear
-infile attend termgpa priGPA ACT final atndrte hwrte frosh soph skipped stndfnl using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\ATTEND.RAW", clear
+infile attend termgpa priGPA ACT final atndrte hwrte frosh soph skipped stndfnl using "F:\Econometrics\ATTEND.RAW", clear
 
 gen priGPAsq = priGPA^2
 gen ACTsq = ACT^2
@@ -52,7 +52,7 @@ reg stndfnl atndrte priGPA ACT priGPAsq ACTsq priGPA_atndrte
 * examination of residuals
 
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\production.csv"
+insheet using "F:\Econometrics\production.csv"
 
 gen x_sq = x^2
 gen x_cubic = x^3
@@ -99,7 +99,7 @@ ovtest
 *****************************************
 * missing data - BWAGHT data
 *****************************************
-infile faminc cigtax cigprice bwght fatheduc motheduc parity male white cigs lbwght bwghtlbs packs lfaminc using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\BWGHT.RAW", clear
+infile faminc cigtax cigprice bwght fatheduc motheduc parity male white cigs lbwght bwghtlbs packs lfaminc using "F:\Econometrics\BWGHT.RAW", clear
 
 sum
 
@@ -107,14 +107,14 @@ sum
  missing data - LAWSCH85 data
 *****************************************
 clear
-infile rank salary cost LSAT GPA libvol faculty age clsize north south east west lsalary studfac top10 r11_25 r26_40 r41_60 llibvol lcost using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\LAWSCH85.RAW", clear
+infile rank salary cost LSAT GPA libvol faculty age clsize north south east west lsalary studfac top10 r11_25 r26_40 r41_60 llibvol lcost using "F:\Econometrics\Chapter5_data\LAWSCH85.RAW", clear
 
 sum
 
 *******************************************************
 outliers and influential obs.- rdchem data
 *******************************************************
-infile rd sales profits rdintens profmarg salessq lsales lrd using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\RDCHEM.RAW", clear
+infile rd sales profits rdintens profmarg salessq lsales lrd using "F:\Econometrics\RDCHEM.RAW", clear
 
 twoway (scatter rdintens sales)
 
@@ -131,7 +131,7 @@ reg rdintens sales profmarg if sales < 38000
 *****************
 * WAGE1 data
 clear
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\WAGE1.RAW"
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW"
 
 * intercept shift
 reg wage female educ exper tenure
@@ -278,7 +278,7 @@ Second Interview Status
 
 clear
 
-infile SHEET CHAIN CO_OWNED STATE SOUTHJ CENTRALJ NORTHJ PA1 PA2 SHORE NCALLS EMPFT1 EMPPT1 NMGRS1 WAGE_ST1 INCTIME1 FIRSTINC1 BONUS1 PCTAFF1 MEAL1 OPEN1 HRSOPEN1 PSODA1 PFRY1 PENTREE1 NREGS1 NREGS_E1 TYPE2 STATUS2 DATE2 NCALLS2 EMPFT2 EMPPT2 NMGRS2 WAGE_ST2 INCTIME2 FIRSTINC2 SPECIAL2 MEAL2 OPEN2 HRSOPEN2 PSODA2 PFRY2 PENTREE2 NREGS2 NREGS_E2 using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\NewJersey_Pennsylvania\public.dat"
+infile SHEET CHAIN CO_OWNED STATE SOUTHJ CENTRALJ NORTHJ PA1 PA2 SHORE NCALLS EMPFT1 EMPPT1 NMGRS1 WAGE_ST1 INCTIME1 FIRSTINC1 BONUS1 PCTAFF1 MEAL1 OPEN1 HRSOPEN1 PSODA1 PFRY1 PENTREE1 NREGS1 NREGS_E1 TYPE2 STATUS2 DATE2 NCALLS2 EMPFT2 EMPPT2 NMGRS2 WAGE_ST2 INCTIME2 FIRSTINC2 SPECIAL2 MEAL2 OPEN2 HRSOPEN2 PSODA2 PFRY2 PENTREE2 NREGS2 NREGS_E2 using "F:\Econometrics\NewJersey_Pennsylvania\public.dat"
 
 
 describe
@@ -318,7 +318,7 @@ reg EMPTOT time STATE DD
 * dummy variable trap
 
 clear
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter5_data\WAGE1.RAW"
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW"
 
 gen male = 1-female
 
