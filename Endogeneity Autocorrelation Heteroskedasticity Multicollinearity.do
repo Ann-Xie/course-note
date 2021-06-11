@@ -19,7 +19,7 @@ reg wage educ educ2
 * comsumption2 data - imperfect multicollinearity
 **************************************************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\consumption2.csv"
+insheet using "F:\Econometrics\consumption2.csv"
 
 corr income wealth
 
@@ -40,7 +40,7 @@ X5 = noninstitutionalized population over 14 years of age
 X6 = time
 *********************************************************
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\longley_data.csv"
+insheet using "F:\Econometrics\longley_data.csv"
 reg y x1 x2 x3 x4 x5 time
 
 correlate x1 x2 x3 x4 x5 time
@@ -98,7 +98,7 @@ reg y GNP_real x4 x5
 ********************************
 * consumption3 data - heteroscedasticity
 clear 
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\consumption3.csv"
+insheet using "F:\Econometrics\consumption3.csv"
 
 reg consumption income
 
@@ -140,7 +140,7 @@ reg consumption income, vce(robust)
 
 clear
 
-infile str8 country year lgaspcar lincomep lrpmg lcarpcap using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\TableF9.2_Gasoline.dat" in 2/343
+infile str8 country year lgaspcar lincomep lrpmg lcarpcap using "F:\Econometrics\TableF9.2_Gasoline.dat" in 2/343
 
 tab country, gen (country)
 
@@ -188,7 +188,7 @@ estout OLS White_robust FGLS, cells(b(star fmt(3)) se(par fmt(2))) legend label 
 
 clear
 
-infile price assess bdrms lotsize sqrft colonial lprice lassess llotsize lsqrft using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\HPRICE1.RAW", clear
+infile price assess bdrms lotsize sqrft colonial lprice lassess llotsize lsqrft using "F:\Econometrics\HPRICE1.RAW", clear
 
 reg price lotsize sqrft bdrms
 imtest, white
@@ -209,7 +209,7 @@ imtest, white
 ************************************************************
 clear
 
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\product.csv"
+insheet using "F:\Econometrics\product.csv"
 
 tsset year
 
@@ -311,7 +311,7 @@ estout m1 Newey_West, cells(b(star fmt(3)) se(par fmt(2))) starlevels(* 0.10 ** 
 * C-D production function
 ***********************************
 clear 
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\China_C_D_data.csv"
+insheet using "F:\Econometrics\China_C_D_data.csv"
 
 gen lnGDP = ln(rgdp)
 gen lnK = ln(k)
@@ -404,7 +404,7 @@ ereturn list
 * return to education for working women
 * note:  inlf =1 if in labor force, 1975
 clear
-infile inlf hours kidslt6 kidage6 age educ wage repwage hushrs husage huseduc huswage faminc mtr motheduc fatheduc unem city exper nwifeinc lwage expersq using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\MROZ.RAW", clear
+infile inlf hours kidslt6 kidage6 age educ wage repwage hushrs husage huseduc huswage faminc mtr motheduc fatheduc unem city exper nwifeinc lwage expersq using "F:\Econometrics\MROZ.RAW", clear
 
 * 2SLS
 corr educ motheduc fatheduc
