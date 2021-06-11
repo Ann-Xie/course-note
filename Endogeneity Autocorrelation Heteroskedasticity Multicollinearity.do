@@ -9,7 +9,7 @@ set more off
 *******************
 * wage1 data- perfect multicollinearity
 ****************************************
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\WAGE1.RAW", clear
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW", clear
 
 gen educ2 = 2*educ
 reg wage educ educ2
@@ -366,7 +366,7 @@ net install estout, replace
  
 * Card 1995 data
 clear 
-infile id  nearc2 nearc4 educ age fatheduc motheduc weight momdad14 sinmom14 step14 reg661 reg662 reg663 reg664 reg665 reg666 reg667 reg668 reg669 south66 black smsa south smsa66 wage enroll KWW IQ married libcrd14 exper lwage expersq using "F:\Econometrics_undergraduate\class_dataset\Chapter4_data\CARD.RAW"
+infile id  nearc2 nearc4 educ age fatheduc motheduc weight momdad14 sinmom14 step14 reg661 reg662 reg663 reg664 reg665 reg666 reg667 reg668 reg669 south66 black smsa south smsa66 wage enroll KWW IQ married libcrd14 exper lwage expersq using "F:\Econometrics\CARD.RAW"
                    
 * OLS
 reg lwage educ exper expersq black smsa south smsa66 reg662 reg663 reg664 reg665 reg666 reg667 reg668 reg669   
