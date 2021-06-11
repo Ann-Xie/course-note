@@ -1,5 +1,5 @@
 
-insheet using F:\Econometrics_undergraduate\class_dataset\Chapter1_data\nobel_laureate.csv, clear
+insheet using (enter your excel location here), clear
 
 describe
 
@@ -9,14 +9,14 @@ tab country
 * US time-series consumption and income data
 clear
 
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter1_data\consumption_us.csv", clear
+insheet using "(enter your excel location here)", clear
 
-import excel "F:\Econometrics_undergraduate\class_dataset\Chapter1_data\consumption_us.xlsx", sheet("consumption_us") firstrow clear
+import excel "(enter your excel location here)", sheet("consumption_us") firstrow clear
 
 
-global econometrics2019 F:\Econometrics_undergraduate\class_dataset
+global econometrics2019 (enter your excel location here)
 
-import excel $econometrics2019\Chapter1_data\consumption_us.xlsx, sheet("consumption_us") firstrow clear
+import excel $(enter your excel file name here), sheet("consumption_us") firstrow clear
 
 twoway (scatter y x)
 twoway (scatter Y X)
@@ -27,7 +27,7 @@ reg y x
 reg Y X
 
 *****************************************
-*net from C:\Users\Dell5991\Desktop\Econometrics_undergraduate\2018class_notes\estout
+*net from (enter your excel location here)
 *net install estout, replace
 
 estimate store m1, title (model 1)
@@ -54,9 +54,9 @@ twoway (scatter Y X)(line yhat X)
 *****************************************
 clear
 
-import excel "F:\Econometrics_undergraduate\class_dataset\Chapter1_data\econometrics_grade.xlsx", sheet("Sheet1") firstrow clear
+import excel "(enter your excel name here)", sheet("Sheet1") firstrow clear
 
-import excel $econometrics2019\Chapter1_data\econometrics_grade.xlsx, sheet("Sheet1") firstrow clear
+import excel $(enter your excel name here), sheet("Sheet1") firstrow clear
 
 
 * change format
