@@ -3,7 +3,7 @@ clear
 set mem 800m
 
 * anscombe data (outliers)
-infile Y1 X1 Y2 X2 Y3 X3 Y4 X4 using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\anscombe.txt"
+infile Y1 X1 Y2 X2 Y3 X3 Y4 X4 using "F:\Econometrics\anscombe.txt"
 sum
 corr Y1 X1 
 corr Y2 X2
@@ -18,7 +18,7 @@ twoway(scatter Y4 X4)
 
 * Husband and wife's heights
 clear
-infile husband wife using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\husband_wife.txt", clear
+infile husband wife using "F:\Econometrics\husband_wife.txt", clear
 
 twoway (scatter husband wife)(line wife wife)
 
@@ -35,7 +35,7 @@ pwcorr husband wife,sig
 
 clear
 
-infile age length using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\lifeline.txt"
+infile age length using "F:\Econometrics\lifeline.txt"
 
 twoway (scatter age length)
 
@@ -52,7 +52,7 @@ pwcorr age length,sig
 ********************
 * China consumption data
 clear
-insheet using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\consumption_china.csv"
+insheet using "F:\Econometrics\consumption_china.csv"
 
 twoway (scatter consumption income )
 
@@ -66,7 +66,7 @@ twoway (scatter consumption income )(line yhat income)
 * wages
 *******
 * wage data
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\WAGE1.RAW", clear
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW", clear
 
 twoway(scatter wage educ)
 
@@ -104,7 +104,7 @@ reg wage index
 ************************
 clear
 
-use F:\Econometrics_undergraduate\class_dataset\Chapter2_data\phillipsearly.dta
+use F:\Econometrics\phillipsearly.dta
 
 gen unemploy100 = unemploy/100  
 twoway (scatter unemploy100 infl)
@@ -206,7 +206,7 @@ svmat double b50, name(b_hat)
 
 svmat double rmse50, name(rmse)
 
-save F:\Econometrics_undergraduate\class_dataset\Chapter2_data\MC_Sim, replace
+save F:\Econometrics\MC_Sim, replace
 
 drop if rmse1==.|b_hat1==.|b_hat2==.
 
@@ -241,7 +241,7 @@ qnorm rmse1
 * Bootstrap standard error
 *****************************
 * wage data
-infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics_undergraduate\class_dataset\Chapter2_data\WAGE1.RAW", clear
+infile wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade services profserv profocc clerocc servocc lwage expersq tenursq using "F:\Econometrics\WAGE1.RAW", clear
 
 reg wage educ expersq exper tenure
 
@@ -260,7 +260,7 @@ bootstrap division=(_b[educ]/_b[exper]),  seed(100) reps(50): reg wage educ expe
 * One more example
 ******************
 * Engel's law: Households with higher incomes spend a smaller fraction of their income on food
-use F:\Econometrics_undergraduate\class_dataset\Chapter2_data\ducfood.dta, clear
+use F:\Econometrics\ducfood.dta, clear
 
 
 twoway (scatter food total)
